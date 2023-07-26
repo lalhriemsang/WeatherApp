@@ -1,0 +1,161 @@
+trtr<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          ><img src="weatherImg.png" height="45px" width="40px%" alt="" />
+          Weather App</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+          <form class="d-flex" role="search">
+            <input
+              id="city"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search your place"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit" id="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1 class="my-4 text-center">Weather for <span id="cityName"></span></h1>
+      <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-danger">
+              <div class="card-header py-3 text-bg-danger">
+                <h4 class="my-0 fw-normal">Temperature</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <span id="temp1"></span
+                  ><small class="text-body-secondary fw-light"
+                    ><sup>o</sup>C</small
+                  >
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Temperature is <span id="temp"></span><sup>o</sup>C</li>
+                  <li>Min temp is <span id="min_temp"></span><sup>o</sup>C</li>
+                  <li>Max temp is <span id="max_temp"></span><sup>o</sup>C</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-success">
+              <div class="card-header py-3 text-bg-success">
+                <h4 class="my-0 fw-normal">Humidity Info</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <span id="humidity1"></span
+                  ><small class="text-body-secondary fw-light">%</small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Cloud pct is <span id="cloud_pct"></span>%</li>
+                  <li>Feels like is <span id="feels_like"></span>%</li>
+                  <li>Humidity is <span id="humidity"></span>%</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Wind Info</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <span id="wind_speed1"></span
+                  ><small class="text-body-secondary fw-light">km/hr</small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Wind Speed is <span id="wind_speed"></span>km/hr</li>
+                  <li>Wind Degrees is <span id="wind_degrees"></span>km/hr</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="display-6 text-center mb-4">Compare plans</h2>
+
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th style="width: 34%"></th>
+                <th style="width: 22%">cloud_pct(%)</th>
+                <th style="width: 22%">feels_like(%)</th>
+                <th style="width: 22%">humidity(%)</th>
+                <th style="width: 22%">max_temp(<sup>o</sup>C)</th>
+                <th style="width: 22%">min_temp(<sup>o</sup>C)</th>
+                <th style="width: 22%">temp(<sup>o</sup>C)</th>
+                <th style="width: 22%">wind_degrees(<sup>0</sup>)</th>
+                <th style="width: 22%">wind_speed(km/hr)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="Assam">
+                <th scope="row" class="text-start">Assam</th>
+              </tr>
+              <tr id="Mizoram">
+                <th scope="row" class="text-start">Mizoram</th>
+              </tr>
+              <tr id="Nagaland">
+                <th scope="row" class="text-start">Nagaland</th>
+              </tr>
+              <tr id="Meghalaya">
+                <th scope="row" class="text-start">Meghalaya</th>
+              </tr>
+              <tr id="Arunachal Pradesh">
+                <th scope="row" class="text-start">Arunachal</th>
+              </tr>
+              <tr id="Manipur">
+                <th scope="row" class="text-start">Manipur</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
